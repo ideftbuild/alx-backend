@@ -15,6 +15,8 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, value):
         """ Add an item in the cache"""
+        if not key or not value:
+            return
         # remove recently added key when cache is full
         if self.size >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
             print('DISCARD:', self.recentlyAddedKey)
