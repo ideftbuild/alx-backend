@@ -11,7 +11,6 @@ class FIFOCache(BaseCaching):
         self.size = 0
         super().__init__()
 
-
     def put(self, key, value):
         """ Add an item in the cache"""
         if not key or not value:
