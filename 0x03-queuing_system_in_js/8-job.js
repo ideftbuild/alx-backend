@@ -6,7 +6,9 @@ const createPushNotificationsJobs = (jobs, queue) => {
   }
 
   jobs.forEach((data) => {
-    const job = queue.create('push_notification_code_3', data).save((err) => {
+    const job = queue.create('push_notification_code_3', data);
+
+    job.save((err) => {
       if (err) {
         console.error('Failed to create job:', err.message);
       } else {
